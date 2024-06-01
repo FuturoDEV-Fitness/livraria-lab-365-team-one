@@ -28,28 +28,29 @@ class LivroCrud {
   }
 
   deletarLivro(codigo) {
-    try {
+    if (this.consultarLivros(codigo) !== undefined) {
       const conteudoAtual = JSON.parse(fs.readFileSync(this.filePath, "utf8"));
       const updatedLivros = conteudoAtual.filter((livro) => livro.codigo !== codigo);
 
       fs.writeFileSync(this.filePath, JSON.stringify(updatedLivros));
       console.log("Livro deletado com sucesso!");
-    } catch (error) {
-      console.error(error);
-      throw error;
+    } else {
+      console.log("Informe um código existente!");
     }
   }
 
-  async consultarLivros(codigo) {
-    try {
-      const conteudoAtual = JSON.parse(fs.readFileSync(this.filePath, "utf8"));
+  consultarLivros(codigo) {
 
-      const livro = conteudoAtual.find((livro) => livro.codigo === codigo);
-      return livro;
-    } catch (error) {
-      console.error(error);
-      throw error;
+    const conteudoAtual = JSON.parse(fs.readFileSync(this.filePath, "utf8"));
+    const livro = conteudoAtual.find((livro) => livro.codigo === codigo);
+
+    if (livro) {
+      console.log(livro)
+    } else {
+      console.log("Livro não encontrado!")
     }
+
+
   }
 }
 

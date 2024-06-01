@@ -38,8 +38,8 @@ async function run() {
         }
         case "consultar": {
             const idConsultar = await rl.question("Qual o id do livro? ");
-            const livro = await livroCrud.consultarLivros(idConsultar);
-            console.log(livro);
+            await livroCrud.consultarLivros(idConsultar);
+
             break;
         }
         default:
