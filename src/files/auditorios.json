@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "codigo": "d94aa3b2-de83-4c04-98fb-8b2fe6e2d513",
+    "nome": "Clarice Linspector",
+    "descricao": "Classe",
+    "lotacaoMaxima": "200"
+  },
+  {
+    "codigo": "65471ca3-e05d-431b-9e8c-78e0815e555f",
+    "nome": "Carlos Drummond de Andrade",
+    "descricao": "Glamour",
+    "lotacaoMaxima": "400"
+  }
+]
