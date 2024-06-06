@@ -35,9 +35,15 @@ class LeitorCrud {
     }
 
     deletar(deletarNome){
-              // ler o conteudo 
-      //  usar filter para remover o elemento
-      // salva de novo no arquivo o array filtrado
+        const conteudoAtual = JSON.parse(fs.readFileSync(this.filePath, 'utf-8'))
+        const leitorEncontradoDeletar = conteudoAtual.filter(leitor => leitor.nome !== deletarNome)
+        if (leitorEncontradoDeletar){
+            fs.writeFileSync(
+                this.filePath,
+                JSON.stringify(conteudoAtual, null, 2), 
+                'utf-8'
+            )
+        }
     }
 }
 
