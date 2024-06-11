@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "codigo": "779d20d9-0494-4176-b10f-26955cc6bd01",
+    "nome": "Piano",
+    "tipo": "Teclado",
+    "estado": "Novo"
+  },
+  {
+    "codigo": "3d2856be-da0d-4199-8018-e6108a2696c5",
+    "nome": "Viola",
+    "tipo": "Corda",
+    "estado": "Usado"
+  }
+]
